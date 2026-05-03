@@ -224,7 +224,11 @@ Contoh:
 [2026-04-29 19:00:20] [User] [[alice]: hello]
 ```
 
-## Kendala / Kekurangan Program
+## Output 
+![Run Server](assets/server1.png)
+![Run Server](assets/server1.png)
+
+## Kekurangan Program
 
 Berdasarkan source code saat ini:
 
@@ -232,5 +236,3 @@ Berdasarkan source code saat ini:
 2. Command `/exit` belum dibuat.
 3. Shutdown belum terbroadcast ke client lain.
 4. Username `The Knights` langsung auto admin tanpa autentikasi.
-
-Walaupun belum 100% sesuai spesifikasi soal, fondasi utama komunikasi jaringan sudah berjalan dengan baik.
