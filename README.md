@@ -30,8 +30,6 @@ Pada soal ini diminta membuay sistem chat berbasis **socket programming** dengan
 * `PORT` → port server yang digunakan client untuk koneksi.
 * `MAX` → jumlah maksimal client.
 
----
-
 ## 2. wired.c (Server)
 
 Server bertugas menerima client, menyimpan username, broadcast pesan, admin RPC, dan logging.
@@ -50,8 +48,6 @@ time_t start_time;
 * `usernames[][]` menyimpan nama masing-masing client.
 * `start_time` mencatat waktu server saat pertama dijalankan.
 
----
-
 ### Fungsi `log_event()`
 
 ```c
@@ -66,15 +62,11 @@ Contoh output:
 [2026-04-29 19:00:00] [System] [SERVER ONLINE]
 ```
 
----
-
 ### Fungsi `name_exists()`
 
 Berfungsi untuj mengecek apakah username sudah dipakai client lain.
 
 Jika ada nama sama maka otomatis ditolak.
-
----
 
 ### Fungsi `broadcast()`
 
@@ -83,8 +75,6 @@ Mengirim pesan dari satu client ke client lain.
 ```c
 broadcast(msg, sender);
 ```
-
----
 
 ### Server
 
@@ -98,8 +88,6 @@ tetap berjalan tanpa blocking
 ```c
 select(max + 1, &readfds, NULL, NULL, NULL);
 ```
-
----
 
 ### Validasi Username
 
@@ -117,8 +105,6 @@ Saat client pertama kali connect:
 --- Welcome to The Wired, alice ---
 ```
 
----
-
 ### Broadcast Chat
 
 Jika user mengirim:
@@ -132,8 +118,6 @@ Maka user lain menerima dan bisa melihat:
 ```txt
 [alice]: hello semua
 ```
-
----
 
 ### Admin (The Knights)
 
@@ -149,8 +133,6 @@ admin 1 :  jumlah user aktif
 admin 2 :  uptime server     
 admin 3 : shutdown server   
 
----
-
 ## 3. navi.c (Client)
 
 Client digunakan user untuk masuk ke server dan chat.
@@ -163,8 +145,6 @@ Client digunakan user untuk masuk ke server dan chat.
 4. Membuat thread penerima pesan.
 5. Main thread mengirim pesan.
 
----
-
 ### Thread Receiver (Penerima)
 
 ```c
@@ -172,8 +152,6 @@ pthread_create(&tid, NULL, recv_handler, NULL);
 ```
 
 Thread ini terus menerima pesan dari server.
-
----
 
 ### Fungsi `recv_handler()`
 
@@ -184,8 +162,6 @@ Contoh:
 ```txt
 [alice]: halo
 ```
-
----
 
 ## Cara Menjalankan
 
@@ -208,8 +184,6 @@ Terminal lain:
 ```bash
 ./navi
 ```
-
----
 
 ## Contoh Penggunaan
 
@@ -234,8 +208,6 @@ alice: hello
 lain menerima -> [alice]: hello
 ```
 
----
-
 ## Logging
 
 Semua aktivitas tersimpan di:
@@ -251,8 +223,6 @@ Contoh:
 [2026-04-29 19:00:10] [System] [User 'alice' connected]
 [2026-04-29 19:00:20] [User] [[alice]: hello]
 ```
-
----
 
 ## Kendala / Kekurangan Program
 
