@@ -226,7 +226,7 @@ Contoh:
 
 ## Output 
 ![Run Server](assets/server1.png)
-![Run Server](assets/server1.png)
+![Run Server](assets/server2.png)
 
 ## Kekurangan Program
 
