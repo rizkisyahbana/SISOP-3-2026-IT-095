@@ -11,7 +11,7 @@
 Pada soal ini diminta membuay sistem chat berbasis **socket programming** dengan **client-server**.
 
 * **wired.c** sebagai server utama (The Wired).
-* **navi.c* sebagai client (NAVI).
+* *navi.c* sebagai client (NAVI).
 * **protocol.h** menyimpan port dan jumlah maksimum client.
 * Seluruh komunikasi menggunakan **TCP socket**.
 * Server mendukung multi-client dengan `select()` agar dapat menangani banyak koneksi secara bersamaan.
